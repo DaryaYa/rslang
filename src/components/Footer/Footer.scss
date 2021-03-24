@@ -1,0 +1,42 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__github {
+    margin-left: 60px;
+    &__link {
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+    &__image {
+      width: 55px;
+      border-radius: 50%;
+    }
+  }
+
+  &__year {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    span {
+      font-size: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    &__year {
+      display: none;
+    }
+  }
+
+  &__course-link {
+    width: 55px;
+    margin-right: 60px;
+  }
+}
