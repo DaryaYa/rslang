@@ -15,6 +15,7 @@ import TextBook from './pages/TextBook/TextBook';
 import AboutTeam from './pages/AboutTeam/AboutTeam';
 // Components
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
           <Route path={'/about-team'} component={AboutTeam} exact />
           <Redirect to={'/main'} />
         </Switch>
+        <Footer />
       </Router>
     </>
   );
