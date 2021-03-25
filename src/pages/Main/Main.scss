@@ -1,0 +1,53 @@
+.bigben {
+
+  &__title {
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 74px;
+    text-align: center;
+    color: #181748;
+    margin-top: 60px;
+  }
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px 100px 60px 70px;
+    .bigben__image {
+      width: 40vw;
+    }
+    @media only screen and (max-width: 768px) {
+      .bigben__image {
+        display: none;
+      }
+    }
+  }
+}
+
+.video {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+  &__title {
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 62px;
+    color: #181748;
+    text-align: center;
+    margin: 80px 0 40px 0;
+  }
+  &__text {
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 37px;
+    color: #181748;
+    text-align: center;
+    margin-bottom: 20px 0 50px 0;
+  }
+  &__youtube {
+    width: 100%;
+    text-align: center;
+    margin: 50px 0;
+  }
+}
