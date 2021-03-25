@@ -1,53 +1,183 @@
-.bigben {
+.fp-section {
+  position: relative;
+
+  &__iw {
+    max-width: 1720px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  h3 {
+    color: #181748;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: 62px;
+  }
+}
+
+.section-bigben {
+  padding: 40px 0 35px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 175px;
+    right: 40px;
+    width: 860px;
+    height: 825px;
+    background: url("../../assets/images/bigben.svg") 50% 50% no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
 
   &__title {
+    color: #181748;
     font-size: 60px;
     font-weight: bold;
     line-height: 74px;
     text-align: center;
-    color: #181748;
-    margin-top: 60px;
   }
-  &__flex {
+
+  &__content {
+    padding: 85px 0 0 30px;
+  }
+}
+
+.section-video {
+  padding: 40px 0 35px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 690px;
+    margin: 50px auto 0;
+    color: #181748;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 37px;
+  }
+
+  &__youtube {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 60px 100px 60px 70px;
-    .bigben__image {
-      width: 40vw;
+    justify-content: center;
+    margin-top: 75px;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100%;
+      cursor: pointer;
     }
-    @media only screen and (max-width: 768px) {
-      .bigben__image {
-        display: none;
-      }
+
+    iframe {
+      max-width: 100%;
+      width: 1015px;
+      height: 835px;
     }
   }
 }
 
-.video {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+.section-textbook {
+  padding: 135px 0 235px;
+  background: url("../../assets/images/textbook-shadow.svg") 135% 100% no-repeat;
+
   &__title {
-    font-size: 50px;
-    font-weight: bold;
-    line-height: 62px;
-    color: #181748;
+    max-width: 690px;
     text-align: center;
-    margin: 80px 0 40px 0;
   }
+
+  &__text-wr {
+    background: url("../../assets/images/textbook.svg") 85% 50% no-repeat;
+  }
+
   &__text {
+    display: flex;
+    align-items: center;
+    max-width: 690px;
+    margin-top: 80px;
+    min-height: 410px;
     font-size: 30px;
     font-weight: bold;
     line-height: 37px;
-    color: #181748;
     text-align: center;
-    margin-bottom: 20px 0 50px 0;
   }
-  &__youtube {
-    width: 100%;
+
+  .fp-section__iw {
+    padding: 0 15px 0 45px;
+  }
+}
+
+.section-games {
+  padding: 40px 0 310px;
+  background: url("../../assets/images/gamepad-shadow.svg") -50% 100% no-repeat;
+
+  &__title {
+    max-width: 890px;
     text-align: center;
-    margin: 50px 0;
+  }
+
+  &__text-wr {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background: url("../../assets/images/gamepad.svg") 0 100% no-repeat;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    max-width: 890px;
+    margin-top: 80px;
+    min-height: 350px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 37px;
+    text-align: center;
+  }
+
+  .fp-section__iw {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 45px 0 15px;
+  }
+}
+
+.section-statistics {
+  padding: 40px 0 180px;
+  background: url("../../assets/images/graphic-shadow.svg") 30% 100% no-repeat;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__text-wr {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    background: url("../../assets/images/graphic.svg") 10% 100% no-repeat;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    max-width: 650px;
+    margin-top: 80px;
+    min-height: 750px;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 37px;
+    text-align: right;
+  }
+
+  .fp-section__iw {
+    padding: 0 45px 0 15px;
   }
 }

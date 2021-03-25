@@ -14,8 +14,8 @@ interface Opts {
 
 const Video: React.FC<VideoProps> = ({ videoId }) => {
   const opts: Opts = {
-    height: '720px',
-    width: '50%',
+    height: '100%',
+    width: '100%',
     playerVars: {
       autoplay: 1,
     },

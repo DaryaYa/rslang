@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1015.297" height="836.83" viewBox="0 0 1015.297 836.83">
+  <g id="Page-1" transform="translate(0 836.83) rotate(-90)" opacity="0.92">
+    <g id="Core">
+      <g id="theaters">
+        <path id="Shape" d="M732.226,0V112.811h-104.6V0H209.207V112.811H104.6V0H0V1015.3H104.6V902.487h104.6V1015.3H627.622V902.487h104.6V1015.3h104.6V0ZM209.207,789.676H104.6V676.865h104.6V789.676Zm0-225.622H104.6V451.243h104.6V564.054Zm0-225.622H104.6V225.622h104.6V338.432ZM732.226,789.676h-104.6V676.865h104.6V789.676Zm0-225.622h-104.6V451.243h104.6V564.054Zm0-225.622h-104.6V225.622h104.6V338.432Z" fill="#434263" fill-rule="evenodd"/>
+      </g>
+    </g>
+  </g>
+  <g id="Rectangle_21" data-name="Rectangle 21" transform="translate(29.156 238.761)" fill="none" stroke="#fff" stroke-width="5">
+    <rect width="956" height="359" stroke="none"/>
+    <rect x="2.5" y="2.5" width="951" height="354" fill="none"/>
+  </g>
+  <g id="play_circle_filled-24px" transform="translate(372.346 278.958)">
+    <path id="Path_96" data-name="Path 96" d="M0,0H270.605V270.605H0Z" fill="none"/>
+    <path id="Path_97" data-name="Path 97" d="M114.752,2A112.752,112.752,0,1,0,227.5,114.752,112.793,112.793,0,0,0,114.752,2ZM92.2,165.491V64.014l67.651,50.738Z" transform="translate(20.55 20.55)" fill="#fff"/>
+  </g>
+</svg>

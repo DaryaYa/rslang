@@ -17,5 +17,22 @@
 }
 
 body {
-  font-family: 'Century Gothic', sans-serif;
+  font-family: "Century Gothic", sans-serif;
+  background: #f5f5f5;
+  color: #181748;
+}
+
+a,
+a:focus {
+  text-decoration: none;
+}
+
+input,
+input:focus {
+  outline: none;
+}
+
+.chromeperfectpixel-overlay {
+  max-width: 100% !important;
+  width: 100% !important;
 }
