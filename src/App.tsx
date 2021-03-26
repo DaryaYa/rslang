@@ -31,7 +31,7 @@ const App = () => {
           <Route path={'/about-team'} component={AboutTeam} exact />
           <Redirect to={'/main'} />
         </Switch>
-        {/* <Footer /> */}
+        <Footer />
       </Router>
     </>
   );

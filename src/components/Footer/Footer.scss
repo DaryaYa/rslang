@@ -1,42 +1,57 @@
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  min-height: 100px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  min-height: 170px;
+  margin-top: 150px;
+
   &__github {
-    margin-left: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 280px;
+
     &__link {
-      &:not(:first-child) {
-        margin-left: 20px;
-      }
-    }
-    &__image {
+      display: block;
       width: 55px;
+      height: 55px;
+      line-height: 0;
+    }
+
+    &__image {
+      width: 100%;
       border-radius: 50%;
     }
   }
 
-  &__year {
-    position: absolute;
-    bottom: 35px;
-    left: 50%;
-    transform: translateX(-50%);
-    span {
-      font-size: 30px;
-    }
-  }
-
-  @media only screen and (max-width: 768px) {
-    &__year {
-      display: none;
-    }
-  }
-
   &__course-link {
-    width: 55px;
-    margin-right: 60px;
+    margin-left: 70px;
   }
+}
+
+.rss {
+  display: block;
+  position: relative;
+  width: 135px;
+  height: 50px;
+  padding-right: 174px;
+  background: url("../../assets/images/rs_school_js.svg") left center no-repeat;
+  background-size: contain;
+
+  &:hover .rss-year {
+    right: -5px;
+    letter-spacing: 0;
+  }
+}
+
+.rss-year {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #02073a;
+  font-size: 30px;
+  letter-spacing: -2px;
+  line-height: 23px;
+  font-weight: bold;
+  transition: 0.3s;
 }

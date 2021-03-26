@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Header.scss';
-import { IconContext } from 'react-icons';
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
@@ -12,38 +10,49 @@ function Header() {
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
-    <header>
-      <IconContext.Provider value={{ color: '#fff' }}>
-        <div className='navbar'>
-          <Link to='#' className='menu-bars'>
-            <FaBars onClick={showSidebar} />
-          </Link>
-          <Link to='/main' className='header__logo-link'>
-            <h1 className='header__logo'>RSLang</h1>
-          </Link> 
-          <Link to="/about-team" className="header__team-link">О команде</Link>
+    <>
+      <header>
+        <div className="header__iw">
+          <div className="header__block">
+            <Link to="#" className="menu-bars" onClick={showSidebar}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </Link>
+
+            <Link to="/main" className="header__logo-link">
+              <div className="header__logo">
+                <span className="header__logo-p1">RS</span><span className="header__logo-p2">Lang</span>
+              </div>
+            </Link>
+          </div>
+
+          <div className="navbar">
+            <Link to="/about-team" className="header__team-link">About Us</Link>
+          </div>
         </div>
-        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-          <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'>
-              <Link to='#' className='menu-bars'>
-                <AiOutlineClose />
-              </Link>
-            </li>
-            {SidebarData.map((item, index) => {
-              return (
-                <li key={index} className={item.cName}>
-                  <Link to={item.path}>
-                    {item.icon}
-                    <span>{item.title}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </nav>
-      </IconContext.Provider>
-    </header>
+      </header>
+
+      <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+        <ul className='nav-menu-items' onClick={showSidebar}>
+          <li className='navbar-toggle'>
+            <Link to='#' className='menu-bars'>
+              <AiOutlineClose />
+            </Link>
+          </li>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cName}>
+                <Link to={item.path}>
+                  {item.icon}
+                  <span>{item.title}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </>
   );
 }
 
