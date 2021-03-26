@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.scss';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,7 +11,7 @@ import {
 import Main from './pages/Main/Main';
 import MiniGames from './pages/MiniGames/MiniGames';
 import Settings from './pages/Settings/Settings';
-import Statistics from './pages/Statistics/Statistics';
+import { Statistics } from './pages/Statistics/Statistics';
 import TextBook from './pages/TextBook/TextBook';
 import AboutTeam from './pages/AboutTeam/AboutTeam';
 // Components
