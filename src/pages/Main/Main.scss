@@ -1,5 +1,7 @@
 .fp-section {
   position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
 
   &__iw {
     max-width: 1720px;
@@ -152,6 +154,7 @@
 
 .section-statistics {
   padding: 40px 0 180px;
+  margin-bottom: 120px;
   background: url("../../assets/images/graphic-shadow.svg") 30% 100% no-repeat;
 
   &__title {
