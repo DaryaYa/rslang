@@ -1,0 +1,167 @@
+.mg-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 0 120px;
+}
+
+.mg-section__iw {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 1580px;
+  width: 100%;
+  height: 785px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 760px;
+    height: 760px;
+    border-radius: 50%;
+    background: #fff url("../../assets/images/bigben.svg") 50% 50% no-repeat;
+    background-size: 80%;
+    z-index: 10;
+    user-select: none;
+  }
+}
+
+.mg-section__iw__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mini-game {
+  position: relative;
+  max-width: 520px;
+  width: 520px;
+  height: 305px;
+  background: #d8d8dE;
+  transition: .2s all linear;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: #02073a;
+
+    .mini-game__title {
+      color: #fff;
+    }
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #f5f5f5;
+    cursor: default;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 14px 30px;
+  
+    &:before {
+      content: "";
+      position: absolute;
+      background-size: contain;
+      user-select: none;
+    }
+  }
+
+  &__title {
+    color: #201f4d;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 74px;
+    transition: .2s all linear;
+  }
+}
+
+.mini-game-2,
+.mini-game-4 {
+  .mini-game__title {
+    text-align: right;
+  }
+}
+
+.mini-game-1 {
+  &:after {
+    right: -220px;
+    bottom: -80px;
+    border-radius: 400px 0 0 0;
+  }
+
+  &__link {
+    &:before {
+      left: 30px;
+      bottom: 25px;
+      width: 241px;
+      height: 172px;
+      background: url("../../assets/images/mg-audiocall.svg") 50% 50% no-repeat;
+    }
+  }
+}
+
+.mini-game-2 {
+  &:after {
+    left: -220px;
+    bottom: -80px;
+    border-radius: 0 400px 0 0;
+  }
+
+  &__link {
+    &:before {
+      right: 30px;
+      bottom: 25px;
+      width: 185px;
+      height: 185px;
+      background: url("../../assets/images/mg-millionaire.svg") 50% 50% no-repeat;
+    }
+  }
+}
+
+.mini-game-3 {
+  &:after {
+    right: -220px;
+    top: -80px;
+    border-radius: 0 0 0 400px;
+  }
+
+  &__link {
+    &:before {
+      left: 30px;
+      bottom: 25px;
+      width: 257px;
+      height: 191px;
+      background: url("../../assets/images/mg-savanna.svg") 50% 50% no-repeat;
+    }
+  }
+}
+
+.mini-game-4 {
+  &:after {
+    left: -220px;
+    top: -80px;
+    border-radius: 0 0 400px 0;
+  }
+
+  &__link {
+    &:before {
+      right: 30px;
+      bottom: 25px;
+      width: 367px;
+      height: 147px;
+      background: url("../../assets/images/mg-sprint.svg") 50% 50% no-repeat;
+    }
+  }
+}
