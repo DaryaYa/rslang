@@ -24,13 +24,13 @@ const App = () => {
       <Router>
         <Header />
         <Switch>
-          <Route path={'/main'} component={Main} exact />
+          <Route path={'/'} component={Main} exact />
           <Route path={'/mini-games'} component={MiniGames} exact />
           <Route path={'/settings'} component={Settings} exact />
           <Route path={'/statistics'} component={Statistics} exact />
           <Route path={'/text-book'} component={TextBook} exact />
           <Route path={'/about-team'} component={AboutTeam} exact />
-          <Redirect to={'/main'} />
+          <Redirect to={'/'} />
         </Switch>
         <Footer />
       </Router>
