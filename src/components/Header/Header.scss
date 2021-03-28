@@ -42,9 +42,13 @@ header {
   font-size: 60px;
   font-weight: bold;
   line-height: 70px;
+
+  &:hover {
+    color: #fff;
+  }
 }
 
-.header__logo-p1 {
+.header__logo__p1 {
   color: #d7d7df;
 }
 
@@ -63,6 +67,7 @@ header {
   transition: all .3s ease-in-out;
 
   &:hover {
+    color: #fff;
     letter-spacing: 1px;
   }
 }

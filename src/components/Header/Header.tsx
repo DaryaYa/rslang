@@ -20,10 +20,8 @@ function Header() {
               <span></span>
             </Link>
 
-            <Link to="/" className="header__logo-link">
-              <div className="header__logo">
-                <span className="header__logo-p1">RS</span><span className="header__logo-p2">Lang</span>
-              </div>
+            <Link to="/" className="header__logo">
+              <span className="header__logo__p1">RS</span><span className="header__logo__p2">Lang</span>
             </Link>
           </div>
 

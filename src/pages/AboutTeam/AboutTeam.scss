@@ -1,0 +1,136 @@
+.about-team {
+  padding: 70px 0 50px;
+  background-image: url("../../assets/images/our-team-code.svg"), url("../../assets/images/our-team-html.svg"), url("../../assets/images/our-team-science.svg"), url("../../assets/images/our-team-pencil.svg");
+  background-position: calc(50% + 500px) 105px, calc(50% - 550px) 715px, calc(50% + 650px) 1475px, calc(50% - 200px) 2470px;
+  background-repeat: no-repeat;
+}
+
+.about-team__title {
+  max-width: 1580px;
+  margin: 0 auto 50px;
+  color: #181748;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 85px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.developer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 95px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    max-width: 1550px;
+    width: 100%;
+    height: 4px;
+    background: #181748;
+  }
+}
+
+.developer-1,
+.developer-3 {
+  &:before {
+    right: 0;
+  }
+
+  .developer__info {
+    margin-left: 60px;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.developer-2,
+.developer-4 {
+  &:before {
+    left: 0;
+  }
+
+  .developer__wrapper {
+    flex-direction: row-reverse;
+  }
+
+  .developer__info {
+    margin-right: 60px;
+  }
+
+  .developer__name {
+    text-align: right;
+  }
+
+  p {
+    text-align: right;
+  }
+}
+
+.developer__wrapper {
+  display: flex;
+  max-width: 1580px;
+  width: 100%;
+}
+
+.developer__photo {
+  max-width: 427px;
+}
+
+.developer__info {
+  padding-top: 70px;
+  font-size: 30px;
+  line-height: 37px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  p + p {
+    margin-top: 25px;
+  }
+}
+
+.developer__name {
+  margin-bottom: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 37px;
+}
+
+.developer__text {
+  margin-top: 30px;
+}
+
+.designer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 95px;
+  flex-grow: 0;
+
+  &__text {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24px;
+    text-transform: uppercase;
+  }
+
+  &__photo {
+    max-width: 174px;
+    margin-top: 20px;
+  }
+
+  &__name {
+    margin: 20px 0 0;
+    font-size: 19px;
+    line-height: 23px;
+  }
+}
