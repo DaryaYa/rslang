@@ -1,4 +1,4 @@
-.register-form {
+.user-form {
   max-width: 715px;
   width: 100%;
   padding: 25px 105px;
@@ -82,9 +82,5 @@
     font-weight: bold;
     line-height: 31px;
     cursor: pointer;
-
-    & + h4 {
-      margin-top: 55px;
-    }
   }
 }
