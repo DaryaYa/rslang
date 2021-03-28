@@ -1,0 +1,148 @@
+.textbook {
+  display: flex;
+  justify-content: center;
+  max-width: 1920px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 25px 0 30px;
+}
+
+.textbook__wrapper {
+  max-width: 1580px;
+  width: 100%;
+}
+
+.textbook-nav {
+  align-items: baseline;
+  background: linear-gradient(
+    to top,
+    #434263 0,
+    #434263 3px,
+    transparent 3px,
+    transparent 18px,
+    #434263 18px,
+    #434263 21px,
+    transparent 21px,
+    transparent 36px,
+    #434263 36px,
+    #434263 39px,
+    transparent 39px
+  );
+}
+
+.textbook-nav__item-0 {
+  display: none;
+}
+
+.textbook-nav__item-1 {
+  margin-left: 60px;
+  padding-bottom: 3px;
+}
+
+.textbook-nav__item-2 {
+  margin-left: 40px;
+  padding-bottom: 21px;
+}
+
+.textbook-nav__item-3 {
+  margin-left: 40px;
+  padding-bottom: 39px;
+}
+
+.textbook-nav__item__button {
+  position: relative;
+  padding-top: 45px;
+
+  &.active,
+  &:hover {
+    &:before,
+    &:after {
+      border-bottom-color: #434263;
+    }
+
+    .textbook-nav__item__button__iw {
+      background: #434263;
+    }
+  }
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    transition: all .2s linear;
+  }
+
+  &:before {
+    left: 0;
+    border-right: 28px solid transparent;
+    border-bottom: 45px solid #a1a1ae;
+  }
+
+  &:after {
+    right: 0;
+    border-left: 28px solid transparent;
+    border-bottom: 45px solid #a1a1ae;
+  }
+}
+
+.textbook-nav__item__button__iw {
+  max-height: 255px;
+  padding: 15px 10px 20px;
+  background: #a1a1ae;
+  color: #fff;
+  font-size: 28px;
+  line-height: 36px;
+  writing-mode: vertical-rl;
+  transform: rotate(-180deg);
+  transition: all .2s linear;
+  cursor: pointer;
+  overflow: hidden; 
+  white-space: nowrap; 
+  text-overflow: ellipsis;
+  user-select: none;
+}
+
+.textbook__tab-content {
+  padding-top: 60px;
+}
+
+.textbook__title__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.textbook__title {
+  position: relative;
+  margin-bottom: 0;
+  padding: 100px 75px;
+  background: #5f5e74;
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 39px;
+  text-transform: uppercase;
+  user-select: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    left: 15px;
+    border: 7px solid #fff;
+    z-index: 0;
+  }
+}
+
+.textbook__descr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px;
+  font-size: 40px;
+  line-height: 49px;
+}

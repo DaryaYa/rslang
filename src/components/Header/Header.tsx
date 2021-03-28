@@ -6,7 +6,6 @@ import './Header.scss';
 
 function Header() {
   const [sidebar, setSidebar] = useState(false);
-
   const showSidebar = () => setSidebar(!sidebar);
 
   return (
@@ -20,7 +19,7 @@ function Header() {
               <span></span>
             </Link>
 
-            <Link to="/main" className="header__logo">
+            <Link to="/" className="header__logo">
               <span className="header__logo__p1">RS</span><span className="header__logo__p2">Lang</span>
             </Link>
           </div>
