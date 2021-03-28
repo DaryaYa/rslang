@@ -14,6 +14,11 @@ interface RegisterFormInterface {
   password1: string;
 }
 
+interface LoginFormInterface {
+  email: string;
+  password: string;
+}
+
 const RegisterForm = () => {
   const {
     register,
@@ -22,7 +27,19 @@ const RegisterForm = () => {
     errors,
   } = useForm<RegisterFormInterface>();
 
-  const onSubmit = async (data: RegisterFormInterface) => {
+  const {
+    register: register2,
+    handleSubmit: handleSubmit2,
+    watch: watch2,
+    errors: errors2,
+  } = useForm<LoginFormInterface>();
+
+  const onSubmitLogin = async (data: LoginFormInterface) => {
+    const user = await http.login(data);
+    console.log(user);
+  };
+
+  const onSubmitRegister = async (data: RegisterFormInterface) => {
     const { email, name, password } = data;
     const userData: UserCreateRequestInterface = {
       email,
@@ -38,20 +55,49 @@ const RegisterForm = () => {
 
   return (
     <>
-      {/* <form className="user-form login-form">
+      <form
+        className="user-form login-form"
+        onSubmit={handleSubmit2(onSubmitLogin)}
+        noValidate
+      >
         <h4 className="user-form__label">Have an account?</h4>
-        <input type="email" placeholder="email" className="user-form__input" />
-        <input
-          type="password"
-          placeholder="password"
-          className="user-form__input"
-        />
+        <div className="user-form__group">
+          <input
+            type="email"
+            placeholder="email"
+            name="email"
+            className="user-form__input"
+            ref={register2({ required: true, pattern: reEmail })}
+          />
+          {errors2.email && errors2.email.type === "required" && (
+            <p className="user-form__mistake">Это обязательное поле</p>
+          )}
+
+          {errors2.email && errors2.email.type === "pattern" && (
+            <p className="user-form__mistake">Введите правильный email</p>
+          )}
+        </div>
+        <div className="user-form__group">
+          <input
+            type="password"
+            placeholder="password"
+            className="user-form__input"
+            name="password"
+            ref={register2({ required: true, minLength: 8 })}
+          />
+          {errors2.password && errors2.password.type === "required" && (
+            <p className="user-form__mistake">Это обязательное поле</p>
+          )}
+          {errors2.password && errors2.password.type === "minLength" && (
+            <p className="user-form__mistake">Минимальная длина 8 символов</p>
+          )}
+        </div>
         <input type="submit" value="Log In" className="user-form__submit" />
-      </form> */}
+      </form>
 
       <form
         className="user-form register-form"
-        onSubmit={handleSubmit(onSubmit)}
+        onSubmit={handleSubmit(onSubmitRegister)}
         noValidate
       >
         <h4 className="user-form__label">New here?</h4>
