@@ -8,7 +8,7 @@ import { link } from "node:fs";
 
 const LINK_BACK = "http://localhost:5000";
 
-const createUser = async (userData: UserCreateRequestInterface) => {
+const createUser = async (userData: any) => {
   try {
     const response: AxiosResponse<UserCreateResponseInterface> = await axios.post(
       `${LINK_BACK}/users`,

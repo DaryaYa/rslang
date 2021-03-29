@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { FaUpload } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
@@ -6,6 +6,7 @@ import http from "../../services/http";
 
 import "./RegisterForm.scss";
 import { UserCreateRequestInterface } from "../../types/user.interface";
+import Spinner from "../Spinner/Spinner";
 
 interface RegisterFormInterface {
   name: string;
@@ -20,6 +21,16 @@ interface LoginFormInterface {
 }
 
 const RegisterForm = () => {
+  const [selectFile, setSelectFile] = useState<File>();
+  const [loading, setLoading] = useState(false);
+
+  const changeFileInput = (e: React.FormEvent<HTMLInputElement>) => {
+    const fileList = e.currentTarget.files;
+    if (fileList) {
+      setSelectFile(fileList[0]);
+    }
+  };
+
   const {
     register,
     handleSubmit,
@@ -35,20 +46,28 @@ const RegisterForm = () => {
   } = useForm<LoginFormInterface>();
 
   const onSubmitLogin = async (data: LoginFormInterface) => {
+    setLoading(true);
     const user = await http.login(data);
     console.log(user);
+    setLoading(false);
   };
 
   const onSubmitRegister = async (data: RegisterFormInterface) => {
+    setLoading(true);
     const { email, name, password } = data;
-    const userData: UserCreateRequestInterface = {
-      email,
-      name,
-      password,
-      userPhoto: "",
-    };
-    const user = await http.createUser(userData);
-    console.log(user);
+
+    const formData = new FormData();
+
+    if (selectFile) {
+      formData.append("imagine", selectFile, selectFile.name);
+    }
+
+    formData.append("email", email);
+    formData.append("name", name);
+    formData.append("password", password);
+
+    const user = await http.createUser(formData);
+    setLoading(false);
   };
 
   const reEmail = /^(([^<>()[\]\\.,;:\s@\\"]+(\.[^<>()[\]\\.,;:\s@\\"]+)*)|(\\".+\\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -60,6 +79,11 @@ const RegisterForm = () => {
         onSubmit={handleSubmit2(onSubmitLogin)}
         noValidate
       >
+        {loading && (
+          <div className="user-form__close-form">
+            <Spinner classNames="user-form__spinner" />
+          </div>
+        )}
         <h4 className="user-form__label">Have an account?</h4>
         <div className="user-form__group">
           <input
@@ -100,6 +124,11 @@ const RegisterForm = () => {
         onSubmit={handleSubmit(onSubmitRegister)}
         noValidate
       >
+        {loading && (
+          <div className="user-form__close-form">
+            <Spinner classNames="user-form__spinner" />
+          </div>
+        )}
         <h4 className="user-form__label">New here?</h4>
         <div className="user-form__group">
           <input
@@ -175,6 +204,7 @@ const RegisterForm = () => {
             id="formFile"
             name="fotosrc"
             accept=".png, .jpg, jpeg"
+            onChange={changeFileInput}
           />
           <label htmlFor="formFile" className="user-form__label-file">
             <FaUpload />

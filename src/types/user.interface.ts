@@ -2,14 +2,14 @@ export interface UserCreateRequestInterface {
   name: string;
   email: string;
   password: string;
-  userPhoto: string;
+  userPhoto?: string;
 }
 
 export interface UserCreateResponseInterface {
   id: string;
   email: string;
   name: string;
-  userPhoto: "";
+  userPhoto?: string;
 }
 
 export interface UserLoginRequestInterface {

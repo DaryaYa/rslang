@@ -4,6 +4,20 @@
   padding: 25px 105px;
   background-color: #ccccd4;
   text-align: center;
+  position: relative;
+
+  &__close-form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: gray, $alpha: 0.5);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__label {
     color: #201f4d;
