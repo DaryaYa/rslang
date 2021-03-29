@@ -9,6 +9,7 @@ const TextBook = () => {
   const [posts] = useState(book1);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  const [activeIdx, setActiveIdx] = useState(0);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -16,7 +17,10 @@ const TextBook = () => {
   const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   // Change page
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginateClickHandler = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    setActiveIdx(pageNumber - 1);
+  }
 
   interface IwordList {
     word: string,
@@ -139,7 +143,7 @@ const TextBook = () => {
 
             <div className="pager">
               <span className="pager__text">Page</span>
-              <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+              <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateClickHandler} activeIdx={activeIdx} />
             </div>
           </div>
 

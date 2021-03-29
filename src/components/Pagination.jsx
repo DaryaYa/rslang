@@ -4,7 +4,7 @@ import {
   Link
 } from 'react-router-dom';
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate, activeIdx }) => {
   const pageNumbers = [];
 
   for(let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -15,9 +15,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     <Router>
       <nav className="pagination-wrapper">
         <ul className="pagination">
-          {pageNumbers.map(number => (
+          {pageNumbers.map((number, idx) => (
             <li key={number} className="pagination__item">
-              <Link to="!#" onClick={() => paginate(number)} className="pagination__item__link">
+              <Link to="!#" onClick={() => paginate(number)} className={`pagination__item__link ${activeIdx === idx ? 'pagination__item__link_active' : ''}`}>
                 {number}
               </Link>
             </li>
