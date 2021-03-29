@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Pagination from '../../components/Pagination'
-import { BiTrash, BiPlay } from 'react-icons/bi';
+import { BsTrash } from 'react-icons/bs';
+import { GiSpeaker } from 'react-icons/gi';
 import book1  from '../../hardcodeDb';
 import './TextBook.scss'
 
@@ -8,6 +9,7 @@ const TextBook = () => {
   const [posts] = useState(book1);
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
+  const [activeIdx, setActiveIdx] = useState(0);
 
   // Get current posts
   const indexOfLastPost = currentPage * postsPerPage;
@@ -15,7 +17,10 @@ const TextBook = () => {
   const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   // Change page
-  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const paginateClickHandler = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    setActiveIdx(pageNumber - 1);
+  }
 
   interface IwordList {
     word: string,
@@ -38,41 +43,33 @@ const TextBook = () => {
 
   const RenderWordsList: React.FC<IpostsInt> = ({ posts }) => {
     return(
-      <ul className="list-group mb-4">
+      <div className="vocabulary">
       {posts.map((el) => {
         return (
-            <li key={el.id} className="d-flex list-group-item justify-content-between align-items-center">
-
-              <div className="d-flex justify-content-start align-items-center">
-                <div className="btns">
-                  <BiTrash />
-                  <BiPlay />
-                </div>
-                <div className="words">
-                  <span className="mr-3 mb-2 text-capitalize">{el.word}</span>
-                  <span className="mr-3 mb-2">{el.transcription}</span>
-                  <span className="text-capitalize mr-3">{el.wordTranslate}</span>
-                </div>
+          <div key={el.id} className="vocabulary__word">
+            <div className="vocabulary__word__block-top">
+              <div className="vocabulary__word__en-wrapper">
+                <GiSpeaker className="vocabulary__controls-play" />
+                <div className="vocabulary__word__en">{el.word}</div>
+                <BsTrash className="vocabulary__controls-delete" />
               </div>
 
-              <div className="d-flex flex-column justify-content-center align-items-center mb-2">
-                <span className="mr-3 mb-3">{el.textExample}</span>
-                <span className="mr-3">{el.textExampleTranslate}</span>
-              </div>
+              <div className="vocabulary__word__transcription">{el.transcription}</div>
+              <div className="vocabulary__word__ru">{el.wordTranslate}</div>
+            </div>
 
-              <div className="d-flex justify-content-end">
-                <img
-                  src={`https://raw.githubusercontent.com/Nickolay-Dudaryk/rslang-data/master/${el.image}`}
-                  className="rounded float-right"
-                  width="100px"
-                  alt={el.textExample}>
-                </img>
-              </div>
+            <div className="vocabulary__word__image"
+                 style={{ backgroundImage: `url("https://raw.githubusercontent.com/Nickolay-Dudaryk/rslang-data/master/${el.image}")` }}>
+            </div>
 
-            </li>
+            <div className="vocabulary__word__example">
+              <div className="vocabulary__word__example__en">{el.textExample}</div>
+              <div className="vocabulary__word__example__ru">{el.textExampleTranslate}</div>
+            </div>
+          </div>
         )
       })}
-    </ul>
+    </div>
     )
   }
   
@@ -127,7 +124,7 @@ const TextBook = () => {
 
         <div className="tab-content textbook__tab-content">
           <div className="tab-pane fade show active" id="textbook" role="tabpanel" aria-labelledby="textbook-tab">
-            <div className="textbook__title__wrapper">
+            <div className="textbook__title-wrapper">
               <h1 className="textbook__title">My electronic textbook</h1>
             </div>
             <div className="textbook__descr">
@@ -138,11 +135,24 @@ const TextBook = () => {
           </div>
 
           <div className="tab-pane fade" id="vocabulary" role="tabpanel" aria-labelledby="vocabulary-tab">
+            <div className="textbook__subtitle-wrapper">
+              <h2 className="textbook__subtitle">Learn new words</h2>
+            </div>
+
             <RenderWordsList posts={currentPost} />
-            <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginate} />
+
+            <div className="pager">
+              <span className="pager__text">Page</span>
+              <Pagination postsPerPage={postsPerPage} totalPosts={posts.length} paginate={paginateClickHandler} activeIdx={activeIdx} />
+            </div>
           </div>
-          
-          <div className="tab-pane fade" id="exercises" role="tabpanel" aria-labelledby="exercises-tab">фывпавпрвармцукцук23412143</div>
+
+          <div className="tab-pane fade" id="exercises" role="tabpanel" aria-labelledby="exercises-tab">
+            <div className="textbook__subtitle-wrapper">
+              <h2 className="textbook__subtitle">Exercise 1: Part A</h2>
+            </div>
+          </div>
+
           <div className="tab-pane fade" id="story" role="tabpanel" aria-labelledby="story-tab">мисмиваерну4к</div>
         </div>
       </div>
