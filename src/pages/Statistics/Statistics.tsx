@@ -4,8 +4,8 @@ import './Statistics.scss';
 import { Line } from 'react-chartjs-3';
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { ProgressLabel } from '../../components/ProgressLabel/ProgressLabel';
-import { BtnsBar } from '../../components/BtnsBar/BtnsBar';
-import { MiniStats } from '../../components/MiniStats/MiniStats';
+import BtnsBar from '../../components/BtnsBar/BtnsBar';
+import MiniStats from '../../components/MiniStats/MiniStats';
 
 
 const wordsNow = 50; // Math.ceil((props.totalNewWords[props.totalNewWords.length - 1] * 100) / this.props.totalWords),
@@ -21,9 +21,7 @@ export const Statistics = () => {
     { _id: 1, apiName: "audioCall" },
     { _id: 2, apiName: "sprintGame" },
     { _id: 3, apiName: "statsSavanna" },
-
     { _id: 4, apiName: "speakIt" },
-
   ];
 
   const stats = {

@@ -25,7 +25,7 @@ interface Props {
 //     }
 // }
 
-export const MiniStats = ({ stats, miniGame }: Props) => {
+const MiniStats = ({ stats, miniGame }: Props) => {
   let elems = [];
   if (!stats[miniGame as keyof StatsInterface]) return <p className="d-flex justify-content-around miniStats-elem">Данных пока нет</p>
 
@@ -43,3 +43,5 @@ export const MiniStats = ({ stats, miniGame }: Props) => {
   }
   return <ul>{elems}</ul>;
 };
+
+export default MiniStats;

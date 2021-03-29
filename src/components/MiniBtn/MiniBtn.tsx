@@ -9,11 +9,13 @@ interface Props {
 };
 
 
-export const MiniBtn = ({ showStats, _id, apiName}: Props) => {
+const MiniBtn = ({ showStats, _id, apiName}: Props) => {
     return (
         <button type='button'
             className='btn btn-info miniBtn-text-color'
             onClick={() => showStats(_id)}>{apiName}
         </button>
     )
-}
+};
+
+export default MiniBtn;

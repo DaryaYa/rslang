@@ -1,5 +1,5 @@
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
-import { MiniBtn } from '../MiniBtn/MiniBtn';
+import MiniBtn from '../MiniBtn/MiniBtn';
 
 interface Props {
   items: { _id: number, apiName: string }[],
@@ -7,8 +7,7 @@ interface Props {
 
 };
 
-
-export const BtnsBar = ({ items, showStats }: Props) => {
+ const BtnsBar = ({ items, showStats }: Props) => {
   const elements = items.map((item: any) => {
     const { _id, apiName } = item;
     return (
@@ -23,3 +22,5 @@ export const BtnsBar = ({ items, showStats }: Props) => {
   });
   return (<ButtonGroup size="lg" className="flex-wrap">{elements}</ButtonGroup>);
 }
+
+export default BtnsBar;
