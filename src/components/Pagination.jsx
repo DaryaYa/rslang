@@ -13,20 +13,19 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
 
   return (
     <Router>
-      <nav className="nav justify-content-center mb-4">
-      <ul className="pagination">
-        {pageNumbers.map(number => (
-          <li key={number} className="page-item">
-            <Link to="!#" onClick={() => paginate(number)} className="page-link">
-              {number}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+      <nav className="pagination-wrapper">
+        <ul className="pagination">
+          {pageNumbers.map(number => (
+            <li key={number} className="pagination__item">
+              <Link to="!#" onClick={() => paginate(number)} className="pagination__item__link">
+                {number}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </Router>
-    
-    )
+  )
 }
 
 export default Pagination;
