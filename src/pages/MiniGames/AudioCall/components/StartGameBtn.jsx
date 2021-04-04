@@ -1,5 +1,5 @@
 const StartGameBtn = ({ startGame }) => (
-  <button onClick={() => startGame()}>Начать игру</button>
+  <button onClick={() => startGame()} className="game-btn audiocall__start-btn">Начать игру</button>
 );
 
 export default StartGameBtn;

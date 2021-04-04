@@ -1,0 +1,104 @@
+.section-game {
+  min-height: calc(100vh - 272px);
+  padding: 60px 0 20px;
+}
+
+.game-container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.game-title {
+  margin: 0;
+  color: #181748;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 85px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 900px;
+  margin: 50px auto 0;
+}
+
+.audiocall__tutorial {
+  font-size: 22px;
+  line-height: 26px;
+  text-align: center;
+}
+
+.audiocall__results {
+  display: flex;
+  row-gap: 15px;
+  flex-direction: column;
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.game-btn {
+  height: 48px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 4px;
+  background: #434263;
+  color: #fff;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 31px;
+  cursor: pointer;
+}
+
+.audiocall__start-btn,
+.audiocall__next-btn {
+  margin: 40px auto 0;
+}
+
+.audiocall__choice-buttons {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.audiocall__choice-buttons__item {
+  max-width: 400px;
+  width: 100%;
+  padding: 4px 10px;
+  border: none;
+  border-radius: none;
+  background: #ccccd4;
+  color: #434263;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 23px;
+  font-weight: bold;
+  line-height: 28px;
+  text-align: left;
+  outline: none;
+  cursor: pointer;
+}
+
+.audiocall__timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  width: 110px;
+  height: 110px;
+  background: #ccccd4;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  color: #434263;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 38px;
+}

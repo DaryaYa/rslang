@@ -6,7 +6,7 @@ const ChoiceButtons = ({ userAnswerOptions, userClickHandler }) => {
     return (userAnswerOptions.map((option) => (
       <button
         onClick={() => userClickHandler(option)}
-        className="choice-button"
+        className="audiocall__choice-buttons__item"
         key={option}
       >
         {option}
@@ -16,7 +16,7 @@ const ChoiceButtons = ({ userAnswerOptions, userClickHandler }) => {
 
 
   return (
-    <div className="choice-buttons">
+    <div className="audiocall__choice-buttons">
       <RenderChoiceBtns />
     </div>
   );
