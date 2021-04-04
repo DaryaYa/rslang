@@ -1,10 +1,10 @@
+import axios, { AxiosResponse } from "axios";
+import { toast } from "react-toastify";
+
 import {
-  UserCreateRequestInterface,
   UserCreateResponseInterface,
   UserLoginRequestInterface,
 } from "./../types/user.interface";
-import axios, { AxiosResponse } from "axios";
-import { link } from "node:fs";
 
 const LINK_BACK = "http://localhost:5000";
 
@@ -16,9 +16,10 @@ const createUser = async (userData: any) => {
     );
 
     const user = response.data;
+    toast.success("Теперь вы можете войти в свой аккаунт");
     return user;
   } catch (err) {
-    return err.response.data;
+    toast.error("Так аккаунт уже есть");
   }
 };
 

@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form";
 import http from "../../services/http";
 
 import "./RegisterForm.scss";
-import { UserCreateRequestInterface } from "../../types/user.interface";
 import Spinner from "../Spinner/Spinner";
 
 interface RegisterFormInterface {
@@ -23,6 +22,8 @@ interface LoginFormInterface {
 const RegisterForm = () => {
   const [selectFile, setSelectFile] = useState<File>();
   const [loading, setLoading] = useState(false);
+  const loginForm = useRef<HTMLFormElement>(null);
+  const registerForm = useRef<HTMLFormElement>(null);
 
   const changeFileInput = (e: React.FormEvent<HTMLInputElement>) => {
     const fileList = e.currentTarget.files;
@@ -67,6 +68,10 @@ const RegisterForm = () => {
     formData.append("password", password);
 
     const user = await http.createUser(formData);
+    if (user?.id) {
+      registerForm.current?.reset();
+    }
+
     setLoading(false);
   };
 
@@ -78,6 +83,7 @@ const RegisterForm = () => {
         className="user-form login-form"
         onSubmit={handleSubmit2(onSubmitLogin)}
         noValidate
+        ref={loginForm}
       >
         {loading && (
           <div className="user-form__close-form">
@@ -123,6 +129,7 @@ const RegisterForm = () => {
         className="user-form register-form"
         onSubmit={handleSubmit(onSubmitRegister)}
         noValidate
+        ref={registerForm}
       >
         {loading && (
           <div className="user-form__close-form">
