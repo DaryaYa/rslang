@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './MiniGames.scss';
 
 const MiniGames = () => {
@@ -7,9 +8,9 @@ const MiniGames = () => {
       <div className="mg-section__iw">
         <div className="mg-section__iw__row">
           <div className="mini-game mini-game-1">
-            <a className="mini-game__link mini-game-1__link" href="/main">
+            <Link to="/audiocall" className="mini-game__link mini-game-1__link">
               <h3 className="mini-game__title">Аудиовызов</h3>
-            </a>
+            </Link>
           </div>
 
           <div className="mini-game mini-game-2">
