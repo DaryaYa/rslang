@@ -4,12 +4,37 @@
   padding: 25px 105px;
   background-color: #ccccd4;
   text-align: center;
+  position: relative;
+
+  &__close-form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba($color: gray, $alpha: 0.5);
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__label {
     color: #201f4d;
     font-size: 30px;
     font-weight: bold;
     line-height: 37px;
+  }
+
+  &__group {
+    position: relative;
+    padding-bottom: 5px;
+  }
+
+  &__mistake {
+    position: absolute;
+    color: red;
+    font-size: 14px;
   }
 
   &__input {
@@ -39,8 +64,8 @@
 
   &__input-file {
     position: absolute;
-    width: .1px;
-    height: .1px;
+    width: 0.1px;
+    height: 0.1px;
     opacity: 0;
     overflow: hidden;
     z-index: -1;
