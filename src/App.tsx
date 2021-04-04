@@ -14,6 +14,7 @@ import Settings from './pages/Settings/Settings';
 import { Statistics } from './pages/Statistics/Statistics';
 import TextBook from './pages/TextBook/TextBook';
 import AboutTeam from './pages/AboutTeam/AboutTeam';
+import Savannah from './pages/Savannah/Savannah';
 // Components
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -30,6 +31,7 @@ const App = () => {
           <Route path={'/statistics'} component={Statistics} exact />
           <Route path={'/text-book'} component={TextBook} exact />
           <Route path={'/about-team'} component={AboutTeam} exact />
+          <Route path={'/savannah'} component={Savannah} exact />
           <Redirect to={'/'} />
         </Switch>
         <Footer />
