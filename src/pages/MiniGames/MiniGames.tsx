@@ -22,9 +22,9 @@ const MiniGames = () => {
 
         <div className="mg-section__iw__row">
           <div className="mini-game mini-game-3">
-            <a className="mini-game__link mini-game-3__link" href="/main">
+            <Link to="/savannah" className="mini-game__link mini-game-3__link" href="/main">
               <h3 className="mini-game__title">Саванна</h3>
-            </a>
+            </Link>
           </div>
 
           <div className="mini-game mini-game-4">
