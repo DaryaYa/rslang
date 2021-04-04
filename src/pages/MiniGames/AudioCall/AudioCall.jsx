@@ -1,4 +1,5 @@
 import React from 'react';
+import './AudioCall.scss';
 // components
 import ChoiceButtons from './components/ChoiceButtons';
 import Timer from './components/Timer';
@@ -122,12 +123,12 @@ const AudioCall = () => {
     screen = (
       <>
         <Timer timerCounter={timerCounter} />
-        <button onClick={() => nextBtnClickHandler()}>next</button>
         <ChoiceButtons
           userAnswerOptions={userAnswerOptions}
           correctAnswer={correctAnswer}
           userClickHandler={userClickHandler}
         />
+        <button className="game-btn audiocall__next-btn" onClick={() => nextBtnClickHandler()}>Пропустить</button>
       </>
     )
   } else if (!isGameOn && stepsToFinish > 1) {
@@ -145,9 +146,14 @@ const AudioCall = () => {
 
 
   return (
-    <>
-      {screen}
-    </>
+    <section className="section-game">
+      <div className="game-container">
+        <h1 className="game-title">AudioCall</h1>
+        <div className="game-wrapper">
+          {screen}
+        </div>
+      </div>
+    </section>
   )
 };
 
