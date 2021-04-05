@@ -28,9 +28,9 @@ const MiniGames = () => {
           </div>
 
           <div className="mini-game mini-game-4">
-            <a className="mini-game__link mini-game-4__link" href="/main">
+            <Link to="/sprint" className="mini-game__link mini-game-4__link">
               <h3 className="mini-game__title">Спринт</h3>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
