@@ -2,10 +2,12 @@ import Btn from './Btn';
 
 const FinishScreen = ({ startGame, userCorrectAnswers, userWrongAnswers, userScore }) => (
   <>
-    <div>Верно: {userCorrectAnswers.toString().split(',').join(', ')}</div>
-    <div>Ошибки: {userWrongAnswers.toString().split(',').join(', ')}</div>
-    <div>Очки: {userScore}</div>
-    <Btn onClick={startGame} title={'Играть'} />
+    <div className="game__results">
+      <p>Верно: {userCorrectAnswers.toString().split(',').join(', ')}</p>
+      <p>Ошибки: {userWrongAnswers.toString().split(',').join(', ')}</p>
+      <p>Очки: {userScore}</p>
+    </div>
+    <Btn onClick={startGame} title={'Играть'} classList={'game-btn sprint__start-btn'} />
   </>
 );
 

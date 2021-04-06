@@ -1,4 +1,5 @@
 import React from 'react';
+import './Sprint.scss';
 // COMPONENTS
 import Timer from './components/Timer';
 import StartScreen from './components/StartScreen';
@@ -105,8 +106,10 @@ const Sprint = () => {
   if (isGameOn && timerCounter > 0) {
     screen = (
       <>
-        <Timer timerCounter={timerCounter} />
-        <p>Очки: {userScore}</p>
+        <div className="sprint__block-top">
+          <div className="sprint__score">Очки: {userScore}</div>
+          <Timer timerCounter={timerCounter} />
+        </div>
         <CompareWords
           ruWordToCompare={ruWordToCompare}
           enWordToCompare={enWordToCompare}
@@ -130,9 +133,14 @@ const Sprint = () => {
   
 
   return (
-    <div className="App">
-      {screen}
-    </div>
+    <section className="section-game">
+      <div className="game-container">
+        <h1 className="game-title">Sprint</h1>
+        <div className="game-wrapper">
+          {screen}
+        </div>
+      </div>
+    </section>
   );
 }
 

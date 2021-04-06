@@ -1,3 +1,3 @@
-const Timer = ({ timerCounter }) => <div className="audiocall__timer">{timerCounter}</div>;
+const Timer = ({ timerCounter }) => <div className="game__timer">{timerCounter}</div>;
 
 export default Timer;
