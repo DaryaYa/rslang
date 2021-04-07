@@ -1,10 +1,12 @@
 import rez from "./assets/rez.mp3";
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 
 const StatScreen = ({ wordsArray, score, shots, startGame }) => {
   const audio = new Audio(rez);
-  if (score >= 0) {audio.play();}
-  
+  if (score >= 0) {
+    audio.play();
+  }
+
   return (
     <div>
       <p>Ошибки: {wordsArray.toString().split(",").join(", ")}</p>

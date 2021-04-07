@@ -5,7 +5,7 @@ import { shuffleArray, getRandomInt } from "./utils";
 import good from "./assets/good.mp3";
 import bad from "./assets/bad.mp3";
 import StatScreen from "./StatScreen";
-import StartScreen from './StartScreen';
+import StartScreen from "./StartScreen";
 import { Card } from "./Card";
 
 const Savannah = () => {
@@ -21,7 +21,6 @@ const Savannah = () => {
   const [answers, setAnswers] = useState([]); // all answers: right & wrong
   const [correctAnswer, setCorrectAnswer] = useState("");
   const [move, setMove] = useState(false);
-	
 
   const fetchWords = async () => {
     setLoading(true);
@@ -31,44 +30,44 @@ const Savannah = () => {
     const data = await (await fetch(endpoint)).json();
     setData(data);
     setLoading(false);
-		// set State
-		 const newArr = shuffleArray(data);
-     setQuestion(newArr[0].word);
-     setCorrectAnswer(newArr[0].wordTranslate);
-     const ansArr1 = [
-       ...data.map((el) => el.wordTranslate).splice(1, 4),
-       newArr[0].wordTranslate,
-     ];
-     const ansArr = shuffleArray(ansArr1);
-     console.log(ansArr1);
-     setAnswers(ansArr);
-     handleToggle();
+    // set State
+    const newArr = shuffleArray(data);
+    setQuestion(newArr[0].word);
+    setCorrectAnswer(newArr[0].wordTranslate);
+    const ansArr1 = [
+      ...data.map((el) => el.wordTranslate).splice(1, 4),
+      newArr[0].wordTranslate,
+    ];
+    const ansArr = shuffleArray(ansArr1);
+    console.log(ansArr1);
+    setAnswers(ansArr);
+    handleToggle();
   };
 
-   const handleToggle = () => {
-     setMove(!move);
-   };
+  const handleToggle = () => {
+    setMove(!move);
+  };
 
   useEffect(() => {
     const time = setInterval(() => {
       setTimer(timer - 1);
       console.log(timer);
     }, 1000);
-		if (timer == 0) {
-			setTimer(10);
-			setWordsArray((prev) => [...prev, correctAnswer]);
-			nextShot();
-		}
+    if (timer == 0) {
+      setTimer(10);
+      setWordsArray((prev) => [...prev, correctAnswer]);
+      nextShot();
+    }
     return () => {
       clearTimeout(time);
     };
   }, [timer]);
- 
-	  const nextShot = () => {
-     if (shots > 0) {
-			 setShots((prev) => prev - 1);
+
+  const nextShot = () => {
+    if (shots > 0) {
+      setShots((prev) => prev - 1);
       setTimer(10);
-handleToggle()
+      handleToggle();
       const newArr = shuffleArray(data);
       setQuestion(newArr[0].word);
       setCorrectAnswer(newArr[0].wordTranslate);
@@ -79,16 +78,15 @@ handleToggle()
       const ansArr = shuffleArray(ansArr1);
       console.log(ansArr1);
       setAnswers(ansArr);
-    
-		 } else {
-			 setGameOn(false);
-		 }      
+    } else {
+      setGameOn(false);
+    }
   };
 
   const startGame = () => {
     handleToggle();
-fetchWords();
-setShots(10);
+    fetchWords();
+    setShots(10);
     setGameOn(true);
     setTimer(10);
     setScore(0);
@@ -107,11 +105,10 @@ setShots(10);
     }
     nextShot();
   };
-console.log(wordsArray);
+  console.log(wordsArray);
   // RENDER SCREENS
   let screen;
   if (gameOn && shots > 0) {
-		
     screen = (
       <>
         <div className="sprint__block-top">
@@ -124,29 +121,28 @@ console.log(wordsArray);
             question={question}
             correctAnswer={correctAnswer}
             callback={handleClick}
-						 move={move}
+            move={move}
           />
         }
       </>
     );
   } else if (!gameOn) {
-    screen = <StartScreen startGame={startGame} small={'small'} />;
+    screen = <StartScreen startGame={startGame} small={"small"} />;
   } else if (shots === 0) {
     screen = (
       <StatScreen
-       wordsArray={wordsArray} 
-			 score={score} 
-			 shots={10} 
-			 startGame={startGame}
+        wordsArray={wordsArray}
+        score={score}
+        shots={10}
+        startGame={startGame}
       />
     );
   }
 
   return (
     <section className="savannah section-game">
-			<h1>Savanna Game</h1>
+      <h1>Savanna Game</h1>
       <div className="game-container">
-				
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">
             Choose difficulty level
@@ -161,7 +157,7 @@ console.log(wordsArray);
             <Dropdown.Item onClick={(e) => setGroupe(5)}>6</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
-        
+
         <div>Shots: {shots}</div>
         {loading && <p>Loading...</p>}
         {!loading ? <div className="game-wrapper">{screen}</div> : null}
