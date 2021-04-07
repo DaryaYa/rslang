@@ -1,0 +1,22 @@
+ul.sav-game {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    // width: 50%;
+    position: fixed;
+    top: 12%;
+    left: 30%;
+    //transform: translateY(0px);
+    transition: all 10s;
+
+    li {
+        margin: 0 10px;
+    }
+
+} 
+
+.move {
+        transform: translateY(900%);
+      //  left: 35%;
+      //   transition: all 10s;
+    }
