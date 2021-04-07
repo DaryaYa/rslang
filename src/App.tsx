@@ -11,7 +11,6 @@ import {
   Redirect,
 } from "react-router-dom";
 // PAGES
-
 import Main from "./pages/Main/Main";
 import MiniGames from "./pages/MiniGames/MiniGames";
 import Settings from "./pages/Settings/Settings";
