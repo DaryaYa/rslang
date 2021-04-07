@@ -1,0 +1,44 @@
+.sprint__start-btn {
+  margin: 40px auto 0;
+}
+
+.sprint__buttons {
+  display: flex;
+  column-gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.sprint__block-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sprint__score {
+  color: #434263;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+}
+
+.sprint__compare-words {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.sprint__compare-words__item {
+  max-width: 400px;
+  width: 100%;
+  padding: 6px 10px;
+  background: #fff;
+  border: 3px solid #ccccd4;
+  color: #434263;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 32px;
+}

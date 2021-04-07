@@ -27,13 +27,13 @@
   margin: 50px auto 0;
 }
 
-.audiocall__tutorial {
+.game__tutorial {
   font-size: 22px;
   line-height: 26px;
   text-align: center;
 }
 
-.audiocall__results {
+.game__results {
   display: flex;
   row-gap: 15px;
   flex-direction: column;
@@ -87,7 +87,7 @@
   cursor: pointer;
 }
 
-.audiocall__timer {
+.game__timer {
   display: flex;
   justify-content: center;
   align-items: center;
