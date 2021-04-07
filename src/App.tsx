@@ -11,6 +11,7 @@ import {
   Redirect,
 } from "react-router-dom";
 // PAGES
+
 import Main from "./pages/Main/Main";
 import MiniGames from "./pages/MiniGames/MiniGames";
 import Settings from "./pages/Settings/Settings";
@@ -19,6 +20,7 @@ import TextBook from "./pages/TextBook/TextBook";
 import AboutTeam from "./pages/AboutTeam/AboutTeam";
 import AudioCall from "./pages/MiniGames/AudioCall/AudioCall";
 import Sprint from "./pages/MiniGames/Sprint/Sprint";
+import Savannah from './pages/Savannah/Savannah';
 // Components
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -38,6 +40,7 @@ const App = () => {
           <Route path={"/statistics"} component={Statistics} exact />
           <Route path={"/text-book"} component={TextBook} exact />
           <Route path={"/about-team"} component={AboutTeam} exact />
+          <Route path={'/savannah'} component={Savannah} exact />
           <Redirect to={"/"} />
         </Switch>
 
