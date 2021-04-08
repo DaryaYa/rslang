@@ -1,0 +1,15 @@
+.savannah {
+    background-image: url('./assets/sun.jpg');
+    background-size: cover;
+    height: 70vh;
+
+    .small {
+        display: block;
+        width: fit-content;
+        margin: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
