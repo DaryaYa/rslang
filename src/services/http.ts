@@ -6,7 +6,7 @@ import {
   UserLoginRequestInterface,
 } from "./../types/user.interface";
 
-const LINK_BACK = "http://localhost:5000";
+const LINK_BACK = "https://darya-rslang.herokuapp.com";
 
 const createUser = async (userData: any) => {
   try {

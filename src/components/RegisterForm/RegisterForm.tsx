@@ -42,7 +42,7 @@ const RegisterForm = () => {
   const {
     register: register2,
     handleSubmit: handleSubmit2,
-    watch: watch2,
+ //   watch: watch2,
     errors: errors2,
   } = useForm<LoginFormInterface>();
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Dropdown } from "react-bootstrap";
 import "./savannah.scss";
 import { shuffleArray, getRandomInt } from "./utils";
@@ -41,19 +41,42 @@ const Savannah = () => {
     const ansArr = shuffleArray(ansArr1);
     console.log(ansArr1);
     setAnswers(ansArr);
-    handleToggle();
+    //handleToggle();
+   // setMove((m) => !m);
   };
 
-  const handleToggle = () => {
-    setMove(!move);
-  };
+  // const handleToggle = useCallback(() => {
+  //   setMove(!move);
+  // },[]) 
+  //setMove(m => !m)
+
+const nextShot = useCallback(() => {
+  if (shots > 0) {
+    setShots((prev) => prev - 1);
+    setTimer(10);
+ //   handleToggle();
+ setMove((m) => !m);
+    const newArr = shuffleArray(data);
+    setQuestion(newArr[0].word);
+    setCorrectAnswer(newArr[0].wordTranslate);
+    const ansArr1 = [
+      ...data.map((el) => el.wordTranslate).splice(1, 4),
+      newArr[0].wordTranslate,
+    ];
+    const ansArr = shuffleArray(ansArr1);
+    console.log(ansArr1);
+    setAnswers(ansArr);
+  } else {
+    setGameOn(false);
+  }
+}, [data, shots]);
 
   useEffect(() => {
     const time = setInterval(() => {
       setTimer(timer - 1);
       console.log(timer);
     }, 1000);
-    if (timer == 0) {
+    if (timer === 0) {
       setTimer(10);
       setWordsArray((prev) => [...prev, correctAnswer]);
       nextShot();
@@ -61,30 +84,13 @@ const Savannah = () => {
     return () => {
       clearTimeout(time);
     };
-  }, [timer]);
+  }, [timer, correctAnswer, nextShot]);
 
-  const nextShot = () => {
-    if (shots > 0) {
-      setShots((prev) => prev - 1);
-      setTimer(10);
-      handleToggle();
-      const newArr = shuffleArray(data);
-      setQuestion(newArr[0].word);
-      setCorrectAnswer(newArr[0].wordTranslate);
-      const ansArr1 = [
-        ...data.map((el) => el.wordTranslate).splice(1, 4),
-        newArr[0].wordTranslate,
-      ];
-      const ansArr = shuffleArray(ansArr1);
-      console.log(ansArr1);
-      setAnswers(ansArr);
-    } else {
-      setGameOn(false);
-    }
-  };
+  
 
   const startGame = () => {
-    handleToggle();
+   // handleToggle();
+  // setMove((m) => !m);
     fetchWords();
     setShots(10);
     setGameOn(true);
@@ -94,7 +100,7 @@ const Savannah = () => {
   };
 
   const handleClick = (e) => {
-    if (e.target.innerText == correctAnswer) {
+    if (e.target.innerText === correctAnswer) {
       setScore(score + 1);
       const audio = new Audio(good);
       audio.play();
