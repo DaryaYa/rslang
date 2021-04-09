@@ -37,4 +37,4 @@ const login = async (userData: UserLoginRequestInterface) => {
   }
 };
 
-export default { createUser, login };
+export const http= { createUser, login };

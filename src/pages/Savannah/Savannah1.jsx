@@ -147,7 +147,7 @@ const nextShot = useCallback(() => {
 
   return (
     <section className="savannah section-game">
-      <h1>Savanna Game</h1>
+      {/* <h1>Savanna Game</h1> */}
       <div className="game-container">
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">

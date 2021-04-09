@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { FaUpload } from "react-icons/fa";
 import { useForm } from "react-hook-form";
 
-import http from "../../services/http";
+import { http } from "../../services/http";
 
 import "./RegisterForm.scss";
 import Spinner from "../Spinner/Spinner";
