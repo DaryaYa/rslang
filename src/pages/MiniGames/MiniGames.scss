@@ -2,6 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   padding: 35px 0 120px;
 }
 
@@ -163,5 +164,77 @@
       height: 147px;
       background: url("../../assets/images/mg-sprint.svg") 50% 50% no-repeat;
     }
+  }
+}
+
+@media all and (max-width: 1919px) {
+  .mg-section {
+    max-width: 1200px;
+    padding: 20px;
+  }
+
+  .mg-section__iw {
+    min-height: 645px;
+
+    &::before {
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  .mini-game::after {
+    width: 200px;
+    height: 200px;
+  }
+
+  .mini-game-1::after {
+    right: -30px;
+    bottom: -5px;
+    border-radius: 200px 0 0 0;
+  }
+
+  .mini-game-2::after {
+    left: -30px;
+    bottom: -5px;
+    border-radius: 0 200px 0 0;
+  }
+
+  .mini-game-3::after {
+    right: -30px;
+    top: -5px;
+    border-radius: 0 0 0 200px;
+  }
+
+  .mini-game-4::after {
+    left: -30px;
+    top: -5px;
+    border-radius: 0 0 200px 0;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .mg-section__iw {
+    row-gap: 25px;
+  }
+
+  .mg-section__iw__row {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 25px;
+  }
+
+  .mg-section__iw::before {
+    display: none;
+  }
+
+  .mini-game::after {
+    display: none;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .mini-game__title {
+    font-size: 48px;
+    line-height: 58px;
   }
 }

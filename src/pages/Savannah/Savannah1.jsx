@@ -151,7 +151,7 @@ const nextShot = useCallback(() => {
       <div className="game-container">
         <Dropdown>
           <Dropdown.Toggle variant="warning" id="dropdown-basic">
-            Choose difficulty level
+            Choose difficulty
           </Dropdown.Toggle>
           <div>Level {group + 1}</div>
           <Dropdown.Menu>
