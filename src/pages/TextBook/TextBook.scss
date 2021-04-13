@@ -108,7 +108,7 @@
 }
 
 .textbook__tab-content {
-  padding-top: 60px;
+  padding: 60px 20px 0;
 }
 
 .textbook__title-wrapper,
@@ -173,6 +173,7 @@
   margin-top: 75px;
   font-size: 40px;
   line-height: 49px;
+  text-align: center;
 }
 
 .vocabulary {
@@ -292,5 +293,40 @@
   &_active {
     color: #050537;
     font-weight: bold;
+  }
+}
+
+@media all and (max-width: 1600px) {
+  .vocabulary {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media all and (max-width: 991px) {
+  .vocabulary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (max-width: 767px) {
+  .textbook__title {
+    padding: 50px 45px;
+    text-align: center;
+  }
+
+  .textbook__descr {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media all and (max-width: 639px) {
+  .vocabulary {
+    grid-template-columns: 1fr;
+  }
+
+  .pager__text {
+    font-size: 22px;
+    line-height: 28px;
   }
 }

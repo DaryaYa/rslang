@@ -109,3 +109,13 @@
     cursor: pointer;
   }
 }
+
+@media all and (max-width: 639px) {
+  .user-form {
+    padding: 25px 20px;
+  }
+
+  .user-form__submit {
+    width: 100%;
+  }
+}

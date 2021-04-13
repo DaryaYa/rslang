@@ -134,3 +134,59 @@
     line-height: 23px;
   }
 }
+
+@media all and (max-width: 1199px) {
+  .about-team {
+    padding: 70px 20px 50px;
+  }
+
+  .developer__photo {
+    width: 300px;
+    height: 300px;
+  }
+
+  .developer__info {
+    padding-top: 0;
+  }
+}
+
+@media all and (max-width: 991px) {
+  .developer .developer__wrapper {
+    flex-direction: column;
+  }
+
+  .developer__photo {
+    margin: 0 auto;
+  }
+
+  .developer__info {
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .developer-1 .developer__info,
+  .developer-3 .developer__info {
+    margin-left: 0;
+  }
+
+  .developer-2 .developer__info,
+  .developer-4 .developer__info {
+    margin-right: 0;
+  }
+
+  .developer-2,
+  .developer-4 {
+    .developer__name,
+    p {
+      text-align: left;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .about-team__title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+}

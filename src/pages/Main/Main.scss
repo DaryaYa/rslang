@@ -43,7 +43,7 @@
   }
 
   &__content {
-    padding: 85px 0 0 30px;
+    margin: 85px 0 0 30px;
   }
 }
 
@@ -183,5 +183,142 @@
 
   .fp-section__iw {
     padding: 0 45px 0 15px;
+  }
+}
+
+@media all and (max-width: 1599px) {
+  .section-bigben::before {
+    top: 375px;
+    width: 560px;
+    height: 537px;
+  }
+
+  .section-video__youtube iframe {
+    height: 630px;
+  }
+
+  .section-textbook__text-wr {
+    background-size: 500px 303px;
+  }
+
+  .section-games__text-wr {
+    background-size: 500px 237px;
+  }
+
+  .section-statistics__text-wr {
+    background-size: 500px 500px;
+  }
+
+  .section-statistics__text {
+    min-height: 450px;
+  }
+}
+
+@media all and (max-width: 1199px) {
+  .section-bigben::before {
+    content: none;
+  }
+
+  .section-bigben__content {
+    margin-left: 0;
+  }
+
+  .user-form {
+    margin: 0 auto;
+  }
+
+  .section-textbook__title {
+    margin: 0 auto;
+  }
+
+  .section-textbook__text-wr {
+    padding-bottom: 330px;
+    background-position-y: bottom;
+  }
+
+  .section-textbook__text {
+    align-items: initial;
+    min-height: auto;
+    margin: 50px auto 0;
+    text-align: left;
+  }
+
+  .section-games {
+    background-position-x: left;
+  }
+
+  .section-games__text-wr {
+    justify-content: center;
+    padding-bottom: 270px;
+    background-position-x: right;
+  }
+
+  .section-games__text {
+    max-width: 690px;
+    min-height: auto;
+    margin: 50px auto 0;
+    text-align: left;
+  }
+
+  .section-statistics__text-wr {
+    padding-bottom: 540px;
+  }
+
+  .section-statistics__text {
+    max-width: 690px;
+    min-height: auto;
+    margin: 50px auto 0;
+    text-align: left;
+  }
+}
+
+@media all and (max-width: 639px) {
+  .section-bigben__title {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .fp-section h3 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .fp-section .fp-section__iw {
+    padding: 0 10px;
+  }
+
+  .section-video__text,
+  .section-textbook__text,
+  .section-games__text,
+  .section-statistics__text {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .section-video__youtube {
+    img {
+      display: none;
+    }
+
+    iframe {
+      height: 430px;
+    }
+  }
+
+  .section-textbook {
+    padding: 70px 0 135px;
+  }
+
+  .section-games {
+    padding: 40px 0 150px;
+  }
+
+  .section-statistics {
+    padding: 40px 0 80px;
+  }
+
+  .section-statistics__text-wr {
+    padding-bottom: 340px;
+    background-size: 300px 300px;
   }
 }

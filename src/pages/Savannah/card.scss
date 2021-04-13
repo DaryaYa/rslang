@@ -1,21 +1,27 @@
 ul.sav-game {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    // width: 50%;
-    position: fixed;
-    top: 12%;
-    left: 30%;
-    //transform: translateY(0px);
-    transition: all 10s;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  transition: top 10s linear;
 
-    li {
-        margin: 0 10px;
-    }
+  li {
+    margin: 0 10px;
+  }
 }
 
-.move {
-    transform: translateY(1900%);
-    //  left: 35%;
-    //   transition: all 10s;
+ul.sav-game.move {
+  top: 80%;
+}
+
+@media all and (max-width: 991px) {
+  ul.sav-game {
+    top: 15%;
+  }
 }

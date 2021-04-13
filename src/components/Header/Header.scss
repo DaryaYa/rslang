@@ -144,3 +144,33 @@ header {
     }
   }
 }
+
+@media all and (max-width: 640px) {
+  header {
+    height: 80px;
+  }
+
+  .menu-bars {
+    height: 41px;
+
+    span {
+      width: 41px;
+      height: 7px;
+    }
+
+    span + span {
+      margin-top: 10px;
+    }
+  }
+
+  .header__logo {
+    margin-left: 30px;
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .header__team-link {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}

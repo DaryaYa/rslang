@@ -37,3 +37,20 @@ input:focus {
 .Toastify__toast--success {
   background-color: #191748 !important;
 }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #02073a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #010425;
+}
