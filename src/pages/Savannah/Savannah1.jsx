@@ -39,7 +39,7 @@ const Savannah = () => {
       newArr[0].wordTranslate,
     ];
     const ansArr = shuffleArray(ansArr1);
-    console.log(ansArr1);
+    console.log(data);
     setAnswers(ansArr);
     //handleToggle();
    // setMove((m) => !m);
@@ -64,7 +64,7 @@ const nextShot = useCallback(() => {
       newArr[0].wordTranslate,
     ];
     const ansArr = shuffleArray(ansArr1);
-    console.log(ansArr1);
+   // console.log(ansArr1);
     setAnswers(ansArr);
   } else {
     setGameOn(false);
@@ -74,7 +74,7 @@ const nextShot = useCallback(() => {
   useEffect(() => {
     const time = setInterval(() => {
       setTimer(timer - 1);
-      console.log(timer);
+ //     console.log(timer);
     }, 1000);
     if (timer === 0) {
       setTimer(10);
@@ -111,7 +111,7 @@ const nextShot = useCallback(() => {
     }
     nextShot();
   };
-  console.log(wordsArray);
+ // console.log(wordsArray);
   // RENDER SCREENS
   let screen;
   if (gameOn && shots > 0) {

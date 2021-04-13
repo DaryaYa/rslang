@@ -9,7 +9,7 @@ const StatScreen = ({ wordsArray, score, shots, startGame }) => {
 
   return (
     <div>
-      <p>Ошибки: {wordsArray.toString().split(",").join(", ")}</p>
+      <p> {wordsArray.length > 0 ? ("Ошибки: " + wordsArray.toString().split(",").join(", ")) : "Oшибок нет :-)"}</p>
       <p>Score: {score}</p>
       <p>
         процент правильных ответов:{" "}
